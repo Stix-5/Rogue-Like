@@ -1,39 +1,32 @@
 init = function()
-  player = object end
-  player.x = 0
-  player.y = 0
-  player.speed = 1
-  
-  enemy = object
-    x = random.nextInt(50)
-    y = random.nextInt(50)
-    end
+  player = object
+    x = 0
+    y = 0
+    speed = 2
+  end
   
   player_movement = function()
-      if keyboard.UP then
+    if keyboard.UP then
       player.y += player.speed
-  end
-    if keyboard.DOWN then
-      player.y -= player.speed
     end
+     if keyboard.DOWN then
+      player.y -= player.speed
+     end
+     if keyboard.RIGHT then
+      player.x += player.speed
+     end
     if keyboard.LEFT then
       player.x -= player.speed
     end
-    if keyboard.RIGHT then
-      player.x += player.speed
     end
-  end
+  
 end
-
 
 update = function()
   player_movement()
 end
 
 draw = function()
-  screen.clear()
-  screen.drawMap( "map", 0,0, 480, 320 )
-  screen.drawSprite("enemy", enemy.x, enemy.y, 32,32)
-  screen.drawSprite( "player", player.x , player.y, 32, 32 )
-  
+  screen.drawMap( "map1", 0, 0, 400, 300 )
+  screen.drawSprite( "player", player.x, player.y, 32, 32 )
 end
